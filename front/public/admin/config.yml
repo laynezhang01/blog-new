@@ -1,0 +1,127 @@
+backend:
+  name: github
+  branch: main # 分支
+  repo: laynezhang01/blog-posts # 仓库地址
+#  site_domain: astro-decap-cms-oauth.vercel.app # change this to your domain
+#  base_url: https://astro-decap-cms-oauth.vercel.app # change this to your prod URL
+#  auth_endpoint: oauth # the oauth route provided by the integration
+
+media_folder: "src/assets/images" # 文件将被存储在仓库中的位置
+public_folder: "src/assets/images" # 上传媒体文件的 src 属性
+locale: "zh_Hans"
+common_post_config: &common-post-conf
+  create: true # 允许用户在此集合中创建新文档
+  # https://decapcms.org/docs/widgets/
+  fields:
+    - label: "文件名"
+      name: "filename"
+      widget: "string"
+    - label: "slug"
+      name: "slug"
+      widget: "string"
+    - label: "标题"
+      name: "title"
+      widget: "string"
+    - label: "发表日期"
+      name: "date"
+      widget: "datetime"
+      format: "YYYY-MM-DD HH:mm:ss"
+      date_format: "YYYY-MM-DD"
+      time_format: "HH:mm:ss"
+    - label: "更新日期"
+      name: "updated"
+      widget: "datetime"
+      format: "YYYY-MM-DD HH:mm:ss"
+      date_format: "YYYY-MM-DD"
+      time_format: "HH:mm:ss"
+      required: false
+    - label: "封面"
+      name: "cover"
+      widget: "image"
+      required: false
+    - label: "标签"
+      name: "tags"
+      widget: "select"
+      multiple: true
+      required: false
+      options:
+        - "amazon"
+        - "android"
+        - "angularjs"
+        - "azure"
+        - "cdn"
+        - "chartjs"
+        - "chrome"
+        - "csharp"
+        - "css"
+        - "devops"
+        - "diary"
+        - "docker"
+        - "edge"
+        - "git"
+        - "github"
+        - "hexo"
+        - "html"
+        - "icarus"
+        - "java"
+        - "js"
+        - "life"
+        - "material"
+        - "mysql"
+        - "nodejs"
+        - "onedrive"
+        - "oneindex"
+        - "php"
+        - "restapi"
+        - "security"
+        - "serverless"
+        - "shadowdefender"
+        - "tool"
+        - "twikoo"
+        - "ubuntu"
+        - "vagrant"
+        - "vb"
+        - "vite"
+        - "vue"
+        - "webpack"
+        - "windows"
+        - "xlsx"
+        - "小程序"
+    - label: "分类"
+      name: "categories"
+      widget: "select"
+      multiple: true
+      required: false
+      options:
+        - "Diary"
+        - "Tool"
+        - "Tech"
+        - "FrontEnd"
+        - "BackEnd"
+        - "Windows"
+        - "Android"
+        - "Linux"
+        - "Serverless"
+    - label: "正文"
+      name: "body"
+      widget: "markdown"
+    - label: "原创"
+      name: "toc"
+      widget: "boolean"
+      default: true
+    - label: "评论"
+      name: "comments"
+      widget: "boolean"
+      default: true
+
+collections:
+  - name: "2024"
+    label: "2024"
+    folder: "source/_posts/2024"
+    preview_path: "2024/{{filename}}/"
+    <<: *common-post-conf
+  - name: "pages"
+    label: "Pages"
+    folder: "source/_posts/2024"
+    preview_path: "2024/{{filename}}/"
+    <<: *common-post-conf
