@@ -1,7 +1,7 @@
 {
   "name": "@laynezhang/blog",
   "private": true,
-  "workspaces": ["@laynezhang/blog", "@laynezhang/sanity-studio"],
+  "workspaces": ["@laynezhang/front", "@laynezhang/cms"],
   "version": "1.0.0",
   "description": "",
   "author": "laynezhang"
