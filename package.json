@@ -1,0 +1,8 @@
+{
+  "name": "@laynezhang/blog",
+  "private": true,
+  "workspaces": ["@laynezhang/blog", "@laynezhang/sanity-studio", "@laynezhang/shared/*"],
+  "version": "1.0.0",
+  "description": "",
+  "author": "laynezhang"
+}
